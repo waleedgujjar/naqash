@@ -19,7 +19,6 @@ const PremiumNavbar = () => {
   }, []);
 
   useEffect(() => {
-    // GSAP-like entrance animation
     if (navRef.current) {
       navRef.current.style.transform = 'translateY(-100%)';
       navRef.current.style.opacity = '0';

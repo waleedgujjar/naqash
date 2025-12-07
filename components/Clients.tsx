@@ -106,7 +106,7 @@ const TestimonialsSection = () => {
   };
 
   const slideVariants = {
-    enter: (direction) => ({
+    enter: (direction: number) => ({
       x: direction > 0 ? 1000 : -1000,
       opacity: 0,
       scale: 0.9
@@ -117,7 +117,7 @@ const TestimonialsSection = () => {
       opacity: 1,
       scale: 1
     },
-    exit: (direction) => ({
+    exit: (direction: number) => ({
       zIndex: 0,
       x: direction < 0 ? 1000 : -1000,
       opacity: 0,
