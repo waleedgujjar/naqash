@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { Check, Sparkles, Zap, Crown } from 'lucide-react';
 
 const PricingSection = () => {
@@ -111,17 +111,16 @@ const PricingSection = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1]
-      }
-    }
-  };
+  const itemVariants: Variants = {
+     hidden: { opacity: 0, y: 30 },
+     visible: {
+       opacity: 1,
+       y: 0,
+       transition: {
+         duration: 0.6
+       }
+     }
+   };
 
   return (
     <section 

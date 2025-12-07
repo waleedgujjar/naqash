@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { TrendingUp, Search, Link2, BarChart3, Target, Zap, ArrowUpRight } from 'lucide-react';
 
 const PremiumHeroSection = () => {
@@ -70,17 +70,16 @@ const PremiumHeroSection = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1]
-      }
-    }
-  };
+   const itemVariants: Variants = {
+     hidden: { opacity: 0, y: 30 },
+     visible: {
+       opacity: 1,
+       y: 0,
+       transition: {
+         duration: 0.6
+       }
+     }
+   };
 
   const iconData = [
     { Icon: Search, color: '#6622CC', top: '15%', left: '10%', size: 40 },

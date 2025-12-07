@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { TrendingUp, Users, Target, ArrowRight, BarChart3 } from 'lucide-react';
 
 const CaseStudiesSection = () => {
@@ -79,18 +79,16 @@ const CaseStudiesSection = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 60 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.16, 1, 0.3, 1]
-      }
-    }
-  };
-
+  const itemVariants: Variants = {
+     hidden: { opacity: 0, y: 30 },
+     visible: {
+       opacity: 1,
+       y: 0,
+       transition: {
+         duration: 0.6
+       }
+     }
+   };
   return (
     <section 
       ref={sectionRef}

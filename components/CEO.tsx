@@ -1,13 +1,13 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Award, Target, Users, Zap, ArrowRight, Quote } from 'lucide-react';
 import Image from 'next/image';
 
 const CEOSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-  const imageRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -76,17 +76,16 @@ const CEOSection = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: [0.16, 1, 0.3, 1]
-      }
-    }
-  };
+   const itemVariants: Variants = {
+     hidden: { opacity: 0, y: 30 },
+     visible: {
+       opacity: 1,
+       y: 0,
+       transition: {
+         duration: 0.6
+       }
+     }
+   };
 
   return (
     <section 
@@ -262,7 +261,7 @@ const CEOSection = () => {
             >
               <Quote className="absolute top-4 left-4 w-8 h-8 text-[#6622CC] opacity-20" />
               <p className="text-lg text-slate-600 leading-relaxed pl-6">
-                "At <span className="font-semibold text-[#6622CC]">Sathubs</span>, our mission has always been to deliver world-class SEO, Digital Marketing, and technology solutions that drive real business growth. Under my guidance, we focus on innovation, transparency, and long-term success for every client. Our strategies are rooted in data, creativity, and industry-leading expertise — ensuring measurable results and sustainable growth."
+                At <span className="font-semibold text-[#6622CC]">Sathubs</span>, our mission has always been to deliver world-class SEO, Digital Marketing, and technology solutions that drive real business growth. Under my guidance, we focus on innovation, transparency, and long-term success for every client. Our strategies are rooted in data, creativity, and industry-leading expertise — ensuring measurable results and sustainable growth."
               </p>
             </motion.div>
 
