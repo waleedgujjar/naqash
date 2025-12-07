@@ -11,7 +11,7 @@ const ContactSection = () => {
     business: '',
     message: ''
   });
-  const [focusedField, setFocusedField] = useState(null);
+  const [focusedField, setFocusedField] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const sectionRef = useRef(null);
 
@@ -99,14 +99,14 @@ const ContactSection = () => {
      }
    };
 
-  const formFieldVariants = {
+  const formFieldVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.7,
-        ease: [0.16, 1, 0.3, 1]
+        ease: "easeInOut"
       }
     }
   };
