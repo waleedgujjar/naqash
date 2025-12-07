@@ -8,7 +8,7 @@ const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
   const sectionRef = useRef(null);
-  const autoPlayRef = useRef(null);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
   const testimonials = [
     {
@@ -94,7 +94,7 @@ const TestimonialsSection = () => {
     }
   }, [isVisible, currentIndex]);
 
-  const paginate = (newDirection) => {
+  const paginate = (newDirection: number) => {
     setDirection(newDirection);
     setCurrentIndex((prevIndex) => {
       if (newDirection === 1) {
@@ -126,7 +126,7 @@ const TestimonialsSection = () => {
   };
 
   const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset, velocity) => {
+  const swipePower = (offset: number, velocity: number): number => {
     return Math.abs(offset) * velocity;
   };
 

@@ -18,11 +18,12 @@ const PremiumHeroSection = () => {
         const delay = index * 200;
         
         const animate = () => {
-          el.style.transition = `transform ${duration}ms ease-in-out`;
-          el.style.transform = `translateY(-15px) rotate(${index * 2}deg)`;
+          const htmlEl = el as HTMLElement;
+          htmlEl.style.transition = `transform ${duration}ms ease-in-out`;
+          htmlEl.style.transform = `translateY(-15px) rotate(${index * 2}deg)`;
           
           setTimeout(() => {
-            el.style.transform = `translateY(15px) rotate(-${index * 2}deg)`;
+            htmlEl.style.transform = `translateY(15px) rotate(-${index * 2}deg)`;
           }, duration / 2);
         };
         
@@ -42,13 +43,14 @@ const PremiumHeroSection = () => {
       const delay = index * 300;
       
       const animateParticle = () => {
-        particle.style.transition = `all ${duration}ms ease-in-out`;
-        particle.style.transform = `translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px)`;
-        particle.style.opacity = '0.6';
+        const htmlParticle = particle as HTMLElement;
+        htmlParticle.style.transition = `all ${duration}ms ease-in-out`;
+        htmlParticle.style.transform = `translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px)`;
+        htmlParticle.style.opacity = '0.6';
         
         setTimeout(() => {
-          particle.style.transform = `translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px)`;
-          particle.style.opacity = '0.2';
+          htmlParticle.style.transform = `translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px)`;
+          htmlParticle.style.opacity = '0.2';
         }, duration / 2);
       };
       

@@ -5,7 +5,7 @@ import { TrendingUp, Users, Target, ArrowRight, BarChart3 } from 'lucide-react';
 
 const CaseStudiesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const sectionRef = useRef(null);
 
   useEffect(() => {

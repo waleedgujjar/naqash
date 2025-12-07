@@ -6,8 +6,8 @@ import { ChevronDown, Target, TrendingUp, Users } from 'lucide-react';
 const PremiumNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const navRef = useRef(null);
-  const ctaRef = useRef(null);
+  const navRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,14 +25,16 @@ const PremiumNavbar = () => {
       navRef.current.style.opacity = '0';
       
       setTimeout(() => {
-        navRef.current.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease';
-        navRef.current.style.transform = 'translateY(0)';
-        navRef.current.style.opacity = '1';
+        if (navRef.current) {
+          navRef.current.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease';
+          navRef.current.style.transform = 'translateY(0)';
+          navRef.current.style.opacity = '1';
+        }
       }, 100);
     }
   }, []);
 
-  const handleCTAHover = (isHovering) => {
+  const handleCTAHover = (isHovering: boolean) => {
     if (ctaRef.current) {
       if (isHovering) {
         ctaRef.current.style.transform = 'translateY(-2px) scale(1.02)';
@@ -83,7 +85,6 @@ const PremiumNavbar = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative group cursor-pointer"
               whileHover={{ scale: 1.03 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <h1 className="text-2xl font-bold bg-gradient-to-r from-[#6622CC] to-[#4C1FBF] bg-clip-text text-transparent relative">
                 Naqash

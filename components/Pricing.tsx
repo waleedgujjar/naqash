@@ -89,7 +89,7 @@ const PricingSection = () => {
     }
   ];
 
-  const handleCardHover = (e, isHovering) => {
+  const handleCardHover = (e: React.MouseEvent<HTMLDivElement>, isHovering: boolean) => {
     const card = e.currentTarget;
     if (isHovering) {
       card.style.transform = 'translateY(-8px) scale(1.02)';
